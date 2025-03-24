@@ -1,4 +1,4 @@
 package org.aviacompany.Controller;
 
-public class Func {
+public class AdminController {
 }

@@ -1,4 +1,4 @@
 package org.aviacompany.DTO;
 
-public class Admin {
+public class AdminDTO {
 }
