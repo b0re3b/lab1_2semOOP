@@ -1,19 +1,19 @@
 package org.aviacompany.Config;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DataBaseConfig {
-    final static String dbURL = "jdbc:postgresql://localhost:5433/postgres";
-    final static String dbUser = "postgres";
-    final static String dbPass = "sosijopu";
+    private static final String DB_URL = "jdbc:postgresql://localhost:5433/postgres";
+    private static final String DB_USER = "postgres";
+    private static final String DB_PASS = "sosijopu"; // Винеси в змінні середовища!
 
-    public static Сonnection getConnection() {
-        Connection conn = null;
-
+    public static Connection getConnection() {
         try {
-            conn = DriverManager.getConnection(dbURL,dbUser,dbPass);
+            return DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Помилка підключення до бази даних", e);
         }
-        return Connection;
     }
 }
